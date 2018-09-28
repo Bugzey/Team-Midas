@@ -5,6 +5,8 @@ Working on the case for Telelink - A study to predict air pollution for the next
 
 More info [here](https://www.datasciencesociety.net/the-telelink-case-one-step-closer-to-a-better-air-quality-and-city/)
 
+Our article page on the site of Data Science Society: [Link](https://github.com/Bugzey/Team-Midas)
+
 
 ## Project Organisation
 The project is structured following the Cross-Industry Standard Practice in Data Mining (CRISP-DM). We include the following folders:
