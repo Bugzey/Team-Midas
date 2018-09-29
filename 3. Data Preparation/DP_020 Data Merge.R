@@ -19,8 +19,7 @@ date_dimension_file = "0. Data/date_dimension.csv"
 datafile1 <- "0. Data/Air Tube/data_bg_2017.csv"
 datafile2 <- "0. Data/Air Tube/data_bg_2018.csv"
 
-geohash_1 = "0. Data/geohash_mapping_sofia_2017_unique.csv"
-geohash_2 = "0. Data/geohash_mapping_sofia_2018_unique.csv"
+geohash = "0. Data/geohash_mapping_sofia.csv"
 
 eea_file = "0. Data/EEA Data-20180928T184849Z-001/EEA Data/eea_final.csv"
 
@@ -34,11 +33,8 @@ air_tube = rbind(
 	read.csv(file = datafile2)
 )
 
-sofia_geohash = rbind(
-	read.csv(file = geohash_1),
-	read.csv(file = geohash_2)
-)
-sofia_geohash = unique(sofia_geohash)
+sofia_geohash = read.csv(file = geohash)
+
 eea = read.csv(file = eea_file, stringsAsFactors = FALSE)
 meteo = read.csv(file = meteo_file)
 
