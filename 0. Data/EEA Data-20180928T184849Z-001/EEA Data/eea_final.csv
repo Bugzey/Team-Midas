@@ -1,5 +1,4 @@
-,Day_of_year,Year,Station,Concentration,Concentration,Concentration,Concentration,Concentration,Concentration
-,,,,size,sum,min,max,mean,std
+index,Day_of_year,Year,Station,n_measures,sum_pm10,min_pm10,max_pm10,mean_pm10,std_pm10
 0,1,2018,9486,1.0,125.71,125.71,125.71,125.71,
 1,2,2018,9486,1.0,166.47,166.47,166.47,166.47,
 2,3,2018,9486,1.0,101.02,101.02,101.02,101.02,
