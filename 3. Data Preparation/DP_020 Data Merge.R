@@ -79,13 +79,13 @@ eea$station_type <- ifelse(eea$station == "9642", "background",
 						  	   	   ifelse(eea$station == "9484", "traffic",
 						  	   	   	   ifelse(eea$station == "9616", "traffic",NA)))))
 
-eea$longitude <- ifelse(eea$station == "9642", 23.310972,
+eea$latitude <- ifelse(eea$station == "9642", 23.310972,
 					   ifelse(eea$station == "9572", 23.296786,
 					   	   ifelse(eea$station == "9421", 23.400164,
 					   	   	   ifelse(eea$station == "9484", 23.33605,
 					   	   	   	   ifelse(eea$station == "9616", 23.268403,NA)))))
 
-eea$latitude <- ifelse(eea$station == "9642", 42.7322919999999,
+eea$longitude <- ifelse(eea$station == "9642", 42.7322919999999,
 					  ifelse(eea$station == "9572", 42.6805579999999,
 					  	   ifelse(eea$station == "9421", 42.6665079999999,
 					  	   	   ifelse(eea$station == "9484", 42.690353,
