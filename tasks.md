@@ -1,22 +1,27 @@
 ## Interests
 
 Melania:
+
     - Gather traffic data
     - Topological map
 
 Anton:
+
     - Visualize geographic data
 
 Rado:
+
     - Gather and analyze holiday data
     - General project management
     - Documentation
 
 Desi:
+
     - Documentation
     - Add more weather data from new weather stations
 
 Ivan:
+
     - Data exploration and understanding
 
 
