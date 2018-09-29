@@ -1,0 +1,1 @@
+The data from Air tube datasets is hourly from 6 September 2017 20:00 UTC to 16 August 2018 12:00 UTC. We suspect there are a lot of either measurment errors or special values used when measurment is missing. 
