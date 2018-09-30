@@ -7,6 +7,8 @@ More info [here](https://www.datasciencesociety.net/the-telelink-case-one-step-c
 
 Our article page on the site of Data Science Society: [Link](https://github.com/Bugzey/Team-Midas)
 
+**We reached 2-nd place in the competition finals! Great job, everybody!**
+
 
 ## Project Organisation
 The project is structured following the Cross-Industry Standard Practice in Data Mining (CRISP-DM). We include the following folders:

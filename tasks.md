@@ -38,7 +38,7 @@ Ivan:
         - [X] Visualize hotspots of PM10. Can we find special locations which contribute most for the PM10 pollution.
         - [ ] Visualize hotspots of meteorologic data. For example, there may be some locations with a lot of humidity or high pressure.
 			- http://lmgtfy.com/?q=getis+ord
-    - [ ] Time Series visualization in order to see how these metrics have changed throughout time.
+    - [X] Time Series visualization in order to see how these metrics have changed throughout time.
 
 - Business Understanding - description
 
@@ -49,25 +49,26 @@ Ivan:
 
 - Modelling
 	- [ ] Baseline model 
-		- Time series: naive model (daily, weekly)
-		- Cross-section: Ordinary Least Squares, Logistic regression
+		- [ ] Time series: naive model (daily, weekly)
+		- [X] Cross-section: Ordinary Least Squares, Logistic regression
 	- [ ] Time series model (ARIMA)
 	- [ ] Time series with external variables (ARIMAX)
+	- [ ] Panel regression
 	- [ ] Machine learning
 		- Trees
 		- Artificial neural network (e.g. R library forecast, function nnetar())
 
 - Evaluation
-	- [ ] Choose evaluation metrics
+	- [X] Choose evaluation metrics
 	- [ ] Compare all models
 
 - Deployment
-	- [ ] Describe how implement the model
-	- [ ] Describe data and modelling shortcomings
+	- [X] Describe how implement the model
+	- [X] Describe data and modelling shortcomings
 
 - Documentation
 	- [X] Qualifier baseline article
-	- [ ] Full documentation
-	- [ ] Article submitted in the DSS website
+	- [X] Full documentation
+	- [X] Article submitted in the DSS website
 
 
