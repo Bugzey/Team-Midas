@@ -102,13 +102,16 @@ DU_340 VIS.svg
 
 ##	3. Data Preparation
 
+### Data selection
+
+The custom stations were located all over Bulgaria. To select only the relevat stations, we decoded each station's geohash to coordinates, we drove an imaginary circle with radius from the center of Sofia to German village and selected only the stations  which coordinates were falling into the circle. 
+
 ### Data aggregation
 
 We desided to not differenciate between official stations and personal sensors. All data was aggregated to the same format of unique (station_id, date) tuple. Personal sensors were given surogate ids.       
 As for some stations the measurements were daily and for other hourly, where the granulaity were per hour, we aggregated data by minimum, maximum, average and standard deviation.       
 Official stations did not have weather data, so we merged their data with the weather data from the Sofia Airport meteostattion. 
 
-### Data filtering 
 
 ### Feture engineering 
 
