@@ -62,6 +62,34 @@ The following visualization is showing the stations in a radius around the cente
 	 - red: there are values, which are really high         
 After using the threshold of 50 µg/m3, the red color is equivalent to every value, which exceeds the EU air quality limit.
 
+### METEOROLOGICAL DATA from SOFIA AIRPORT (LBSF) - METEO-data
+
+About METEO-data
+There is a README file, where the columns are explained.
+The data is from 1.Jan. 2012 until 17.Sep.2018. All of the missing values (-9999) are in the data for Daily minimum and maximum precipitation amount, so it will not be used for the prediction. 
+Daily temperature:
+DU_270 TEMPAVG.svg	
+DU_280 TEMPMAX.svg	
+DU_290 TEMPMIN.svg         	
+Daily dew point temperature
+DU_150 DTAVG.svg	
+DU_160 DTMAX.svg	
+DU_170 DTMIN.svg      	
+Daily relative humidity
+DU_180 HUMAVG.svg	
+DU_190 HUMMAX.svg	
+DU_200 HUMMIN.svg           	
+Daily wind speed
+DU_300 WINDAVG.svg	
+DU_310 WINDMAX.svg	
+DU_320 WINMIN.svg         
+Daily surface pressure
+DU_240 PRESAVG.svg	
+DU_250 PRESMAX.svg	
+DU_260 PRESMIN.svg           		
+Daily average visibility
+DU_340 VIS.svg
+
 
 ##	3. Data Preparation
 
