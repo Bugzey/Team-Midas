@@ -41,6 +41,7 @@ meteo = read.csv(file = meteo_file)
 #	Clean CSV-s
 #	Clean date dimension
 date_dimension = date_dimension[, -1]
+date_dimension[, "date"] = as.Date(as.character(date_dimension[, "date"]))
 
 #	Fix EEA colnames
 eea_real_colnames = as.character(eea[1, ])
@@ -214,25 +215,25 @@ air_tube_aggregated = merge(
 )
 
 #	Rename eea columns to match air_tube_aggregated
-new_eea_cols = c(
-	"year_day",
-	"P1_max",
-	"P1_mean",
-	"P1_min",
-	"P1_length",
-	"P1_sum",
-	"P1_var",
-	"station",
-	"year",
-	"SamplingProcess",
-	"building_distance",
-	"kerp_distance",
-	"station_type",
-	"longitude",
-	"latitude",
-	"altitude"
+new_eea_colmap = c(
+	max = "P1_max",
+	mean = "P1_mean",
+	min = "P1_min",
+	size = "P1_length",
+	sum = "P1_sum",
+	var = "P1_var",
+	station = "station",
+	SamplingProcess = "SamplingProcess",
+	building_distance = "building_distance",
+	kerp_distance = "kerp_distance",
+	station_type = "station_type",
+	longitude = "longitude",
+	latitude = "latitude",
+	altitude = "altitude",
+	time = "time"
 )
-colnames(eea) = new_eea_cols
+colnames(eea) = new_eea_colmap[colnames(eea)]
+
 air_tube_only_cols = colnames(air_tube_aggregated)[!colnames(air_tube_aggregated) %in% colnames(eea)]
 for (col in air_tube_only_cols) {
 	eea[, col] = NA
