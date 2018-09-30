@@ -157,7 +157,8 @@ To arrive at a single prediction for the entire city of Sofia we then aggregate 
 ###	Single-model approach
 We can avoid the hurdle of aggregating individual models by applying a different model type that incorporates both spacial and temporal data into its algorithm. Traditional statistics models that allow this revolve around panel regression, specifically using Fixed effects or Random effects models, where each individual station is tracked over time and temporal observations are compared to an average value of that specific station over time. The final result arrives at a single set of regressor weights that are valid for all stations at the same time.
 
-
+### 	Simple linear regression
+We have tried simple linear regression, too. Further data transformation was performed. We have transformed datetime values to their sine and cosine equivalents. By this we tried to control for seasonality in the results. We have introduced also Year. Further meteo data was used to model the PM10 avg values. These were the daily average temperature, average precipitation, average surface pressure, and average wind speed. We have achieved adjusted R^2 0.2818
 ##	5. Evaluation
 
 We split the data into a training set and a testing set.
