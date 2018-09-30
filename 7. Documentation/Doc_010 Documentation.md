@@ -141,6 +141,17 @@ The main challenge of the case is that we have two dimensions of the observation
 
 ##	5. Evaluation
 
+We split the data into a training set and a testing set.
+For the testing data set we use a fixed period (e.g. 20%) of the most recent time series data for each station.
+
+For the linear regression model, R-Squared and Root-Mean-Squared-Error are used as metrics to evaluate the model.
+
+For the time series prediction models, the following metrics are used for evalution of the model:
+- MAE - Mean Absolute Error
+- MAPE - Mean Absolute Percentage Error
+- MASE - Mean Absolute Scaled Error
+- RMSE - Root Mean Squared Error
+
 ##	6. Deployment
 
 ### Getting wether forecast
