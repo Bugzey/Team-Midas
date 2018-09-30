@@ -110,6 +110,6 @@ Our solution for the problem of the lack of the traffic data will be to start  g
 
 [1] Air Pollution: Understanding the Problem and Ways to Help Solve It ,  https://www.air-n-water.com/air-pollution.htm     
 [2] CHRISTOPHER NICASTRO, Bulgaria’s Air Pollution Problem: Could it get any Worse?, https://zerowasteeurope.eu/2018/01/bulgaria-air-pollution/     
-[1] Dan Wei, Predicting air pollution level in a specific city, http://cs229.stanford.edu/proj2014/Dan%20Wei,%20Predicting%20air%20pollution%20level%20in%20a%20specific%20city.pdf     
-[2] Predicting Air Pollution in Madrid, https://blog.bigml.com/2018/03/13/predicting-air-pollution-in-madrid/      
+[3] Dan Wei, Predicting air pollution level in a specific city, http://cs229.stanford.edu/proj2014/Dan%20Wei,%20Predicting%20air%20pollution%20level%20in%20a%20specific%20city.pdf     
+[4] Predicting Air Pollution in Madrid, https://blog.bigml.com/2018/03/13/predicting-air-pollution-in-madrid/      
 
