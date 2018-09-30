@@ -79,13 +79,13 @@ eea$station_type <- ifelse(eea$station == "9642", "background",
 						  	   	   ifelse(eea$station == "9484", "traffic",
 						  	   	   	   ifelse(eea$station == "9616", "traffic",NA)))))
 
-eea$latitude <- ifelse(eea$station == "9642", 23.310972,
+eea$longitude <- ifelse(eea$station == "9642", 23.310972,
 					   ifelse(eea$station == "9572", 23.296786,
 					   	   ifelse(eea$station == "9421", 23.400164,
 					   	   	   ifelse(eea$station == "9484", 23.33605,
 					   	   	   	   ifelse(eea$station == "9616", 23.268403,NA)))))
 
-eea$longitude <- ifelse(eea$station == "9642", 42.7322919999999,
+eea$latitude <- ifelse(eea$station == "9642", 42.7322919999999,
 					  ifelse(eea$station == "9572", 42.6805579999999,
 					  	   ifelse(eea$station == "9421", 42.6665079999999,
 					  	   	   ifelse(eea$station == "9484", 42.690353,
@@ -97,10 +97,19 @@ eea$altitude <- ifelse(eea$station == "9642", 534,
 					  	   	   ifelse(eea$station == "9484", 524,
 					  	   	   	   ifelse(eea$station == "9616", 615,NA)))))
 
+eea[, "time"] = as.Date(
+	x = paste(eea[, "year"], eea[, "year_day"], sep = "-"), 
+	format = "%Y-%j"
+)
+eea = eea[, -which(colnames(eea) %in% c("year", "year_day"))]
+
 #	Prepare AirTube - limit to Sofia, convert time data to POSIXct, aggregate by day
 air_tube = merge(
 	air_tube,
-	sofia_geohash[, "geohash"],
+	data.frame(
+		geohash = sofia_geohash[, "geohash"],
+		stringsAsFactors = FALSE
+	),
 	by = "geohash"
 )
 nrow(air_tube)
@@ -159,7 +168,10 @@ for (item in air_tube_aggregated_list[-1]) {
 #	Give air_tube_aggregated its lon and lat BACK
 air_tube_aggregated = merge(
 	air_tube_aggregated,
-	sofia_geohash,
+	data.frame(
+		sofia_geohash,
+		stringsAsFactors = FALSE
+	),
 	by = "geohash"
 )
 
@@ -182,7 +194,7 @@ meteo[, "time"] = as.Date(
 meteo = meteo[!is.na(meteo[, "time"]), ]
 meteo = meteo[, -which(colnames(meteo) %in% c("year", "Month", "day"))]
 
-#	Rename meto cols to tell it apart from air_tube
+#	Rename meteo cols to tell it apart from air_tube
 colnames(meteo)[colnames(meteo) != "time"] = paste(
 	"meteo",
 	colnames(meteo)[colnames(meteo) != "time"],
@@ -202,7 +214,7 @@ air_tube_aggregated = merge(
 )
 
 #	Rename eea columns to match air_tube_aggregated
-colnames(eea) = c(
+new_eea_cols = c(
 	"year_day",
 	"P1_max",
 	"P1_mean",
@@ -220,6 +232,7 @@ colnames(eea) = c(
 	"latitude",
 	"altitude"
 )
+colnames(eea) = new_eea_cols
 air_tube_only_cols = colnames(air_tube_aggregated)[!colnames(air_tube_aggregated) %in% colnames(eea)]
 for (col in air_tube_only_cols) {
 	eea[, col] = NA
@@ -234,8 +247,8 @@ for (col in eea_only_cols) {
 #	
 
 #	rbind eea and air_tube
-eea_factor_cols = sapply(eea, class) == "factor"
-air_tube_aggregated_factor_cols = sapply(air_tube_aggregated, class) == "factor"
+eea_factor_cols = which(sapply(eea, class) == "factor")
+air_tube_aggregated_factor_cols = which(sapply(air_tube_aggregated, class) == "factor")
 
 eea[, eea_factor_cols] = sapply(eea[, eea_factor_cols], as.character)
 air_tube_aggregated[, air_tube_aggregated_factor_cols] = sapply(
@@ -243,11 +256,13 @@ air_tube_aggregated[, air_tube_aggregated_factor_cols] = sapply(
 	as.character
 )
 
+
+
 data_analysis = rbind(
 	eea,
 	air_tube_aggregated,
 	stringsAsFactors = FALSE
-)
+) # 92 202 rows
 
 #	Join with date dimension
 data_analysis = merge(
