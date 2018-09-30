@@ -119,17 +119,20 @@ We used the dates of the records to extract additional time information as if th
 
 ### Data validation
 
-We used data from the official stations’ particular manner’s measurements to validate sensor’s data.
+Our allgorithm for validating the results from the custom station was:    
+1. For every custom station, computing the distance from it to all official station
+2. Filter only the stations that have an official staton with distance in the first quartile. 
+3. Select the nearest official station. 
+3. Chech if the PM10 from the sensor is **no more than 3 times bogger** than the official one: 
+- if it falls in the limit - take the data ai valid; 
+- if not - replace with the official stations. 
 
 
-### Data enriching
+### Data enrichment.
 
 We added missing  historical values of  dataset using linear interpolation. 
 We also looked if we can add traffic data to our data set, but was unable to find relative information for the time period 2013-2018).
 
-### Data validation
-
-We used data from the official stations’ particular manner’s measurements to validate sensor’s data.
 
 ##	4. Modelling
 
