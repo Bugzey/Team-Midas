@@ -40,14 +40,14 @@ Ivan:
 			- http://lmgtfy.com/?q=getis+ord
     - [ ] Time Series visualization in order to see how these metrics have changed throughout time.
 
-- [ ] Business Understanding - description
+- Business Understanding - description
 
-- [ ] Data Preparation
+- Data Preparation
 	- [X] Map geohashes to coordinates
-	- [ ] Combine datasets
+	- [X] Combine datasets
 	- [ ] Clean datasets - missing values, outliers, decide whether to drop bad stations
 
-- [ ] Modelling
+- Modelling
 	- [ ] Baseline model 
 		- Time series: naive model (daily, weekly)
 		- Cross-section: Ordinary Least Squares, Logistic regression
@@ -57,15 +57,16 @@ Ivan:
 		- Trees
 		- Artificial neural network (e.g. R library forecast, function nnetar())
 
-- [ ] Evaluation
+- Evaluation
 	- [ ] Choose evaluation metrics
 	- [ ] Compare all models
 
-- [ ] Deployment
+- Deployment
 	- [ ] Describe how implement the model
 	- [ ] Describe data and modelling shortcomings
 
-- [ ] Documentation
+- Documentation
+	- [X] Qualifier baseline article
 	- [ ] Full documentation
 	- [ ] Article submitted in the DSS website
 
