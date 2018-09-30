@@ -47,11 +47,9 @@ We were provided with PM10 daily measurements from 5 stations in Sofia for the t
 – we had on average around 15 missing days for years 2013 – 2016. We filled the missing values using linear interpolation.      
 – for stations #9421, #9572, #9616, #9642 observations for 2017 year started at November 27, totally missing the values from the previous days. For year 2018, observed day are up to September 14. A possible solution is to take years 2013-2016 as training set and 2017-2018 as a test set.      
 
-Daily mean values of PM vs number of observations per day for station **#9421** can be explored in the following graphics:
+Daily mean values of PM vs number of observations per day for station **#9421** can be explored in the following graphics:    
 
-
-
-### Data from sensors 
+--  Graphics im EEAimages 2013-2018
 
 ### Personal sensors - Air Tube 
 
