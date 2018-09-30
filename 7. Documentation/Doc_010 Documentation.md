@@ -136,7 +136,26 @@ We also looked if we can add traffic data to our data set, but was unable to fin
 
 ##	4. Modelling
 
-The main challenge of the case is that we have two dimensions of the observations - time and geographical position. Having more than 650 sensors, a traditional Time Series approach such as ARIMA cannot properly model the data. A "naive" solution can be to  build 650models predicting the average PM10 values for the following day for every station and then aggregate the using ensemble techniques such as voting to gather a total prediction for Sofia. 
+The main challenge of the case is that we have two dimensions of the observations - time and geographical position. Having more than 650 sensors, a traditional Time Series approach such as ARIMA cannot properly model the data. One possible solution can be to build 650models predicting the average PM10 values for the following day for every station and then aggregate the using ensemble techniques such as voting to gather a total prediction for Sofia. Alternatively, we can employ a different type of model which can incorporate all weather station data into a single predictive model.
+
+###	Model Baseline
+A baseline model is useful to determine how much a more advanced model can contribute to improving the overall prediction accuracy. The exact type of model dpeends on which approach to aggregating the model is used.
+
+Traditional time series models can make use of a "naive" model. The simplest approach is to create a random walk model, which translates to an ARIMA(0, 1, 0) with an optional drift component. Seasonal ARIMA models can be modelled similarly by employing an ARIMA(0, 0, 0)(0, 1, 0)m where m is the seasonal component.
+
+MOdels, which incorporate spatial and temporal components into a single prediction, do allow a simple baseline to be computed. For these models, we only evaluate the model accuracy as per the evaluation metrics, mentioned in section 5. Evaluation.
+
+###	Ensemble approach
+The ensemble approach requires that the dataset be split into separate datasets for each unique measurement station. We then compute different time series models for comparison purposes. The end result is that for each model type we need the sam enumber of models as there are valid stations in the dataset. Time series models include the following:
+
+1. Naive model - random walk
+2. ARIMA - Auto-Regressive Integrated Moving Average
+3. ARIMAX - Auto-Regressive Integrated Moving Average with external non-temporal variables
+
+To arrive at a single prediction for the entire city of Sofia we then aggregate the predictions of all models based on a simple arithmetic mean of the predictied values. One possible encancement of the ensemble is to apply weights to each individual model that are proportional to that model's overall accuracy. For example, we can divide the current model's Root Mean-Squared Error by the sum of Root Mean-Squared Errors of all individual models.
+
+###	Single-model approach
+We can avoid the hurdle of aggregating individual models by applying a different model type that incorporates both spacial and temporal data into its algorithm. Traditional statistics models that allow this revolve around panel regression, specifically using Fixed effects or Random effects models, where each individual station is tracked over time and temporal observations are compared to an average value of that specific station over time. The final result arrives at a single set of regressor weights that are valid for all stations at the same time.
 
 
 ##	5. Evaluation
