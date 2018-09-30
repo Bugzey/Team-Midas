@@ -104,25 +104,38 @@ DU_340 VIS.svg
 
 ### Data aggregation
 
-All data was aggregated to the same format of unique (station_id, date) tuple. Personal sensors were given surogate ids.
+We desided to not differenciate between official stations and personal sensors. All data was aggregated to the same format of unique (station_id, date) tuple. Personal sensors were given surogate ids.       
+As for some stations the measurements were daily and for other hourly, where the granulaity were per hour, we aggregated data by minimum, maximum, average and standard deviation.       
+Official stations did not have weather data, so we merged their data with the weather data from the Sofia Airport meteostattion. 
+
+### Data filtering 
+
+### Feture engineering 
+
+We used the dates of the records to extract additional time information as if the corresponding day is a weekday or weeked day, if it falls in the official holiday calendar and weather falls into a **long weekend** (between a holiday and a weekend). We expenct that a lot of people leave Sofia during holidays/long weekends and PM levels decrease. 
 
 ### Data validation
 
 We used data from the official stations’ particular manner’s measurements to validate sensor’s data.
 
-### Data cleaning
 
 ### Data enriching
 
-We added missing  historical values of  dataset using linear interpolation.
-
+We added missing  historical values of  dataset using linear interpolation. 
 We also looked if we can add traffic data to our data set, but was unable to find relative information for the time period 2013-2018).
 
+### Data validation
+
+We used data from the official stations’ particular manner’s measurements to validate sensor’s data.
 
 ##	4. Modelling
 
+The main challenge of the case is that we have two dimensions of the observations - time and geographical position. Having more than 650 sensors, a traditional Time Series approach such as ARIMA cannot properly model the data. A "naive" solution can be to  build 650models predicting the average PM10 values for the following day for every station and then aggregate the using ensemble techniques such as voting to gather a total prediction for Sofia. 
+
 
 ##	5. Evaluation
+
+##	6. Deployment
 
 ### Getting wether forecast
 
@@ -136,10 +149,7 @@ Once the model is into production, it can be retrain with new data every 3 month
 
 Articles for similar cases for other big cities as **Madrid, Spain**[3] and **Beijing, China** show that it is useful to add traffic information as predictive values in the model. Right now, we could not find publicly available historical data for traffic in Sofia. We found data for the [number of daily vehicle accidents in Sofia](http://opendata.yurukov.net/kat/en), which can be used as an approximation for the traffic, but unfortunately it is only available for years 203-2014.
 
-Our solution for the problem of the lack of the traffic data will be to start  gathering hourly information for the traffic in several regoins in Sofia, using the Google [Distance Matrix API](https://developers.google.com/maps/documentation/distance-matrix/start). 
-
-##	6. Deployment
-
+Our solution for the problem of the lack of the traffic data will be to start  gathering hourly information for the traffic in several regoins in Sofia, using the [Google Distance Matrix API](https://developers.google.com/maps/documentation/distance-matrix/start). 
 
 ##	7. Documentation
 
