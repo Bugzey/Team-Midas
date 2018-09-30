@@ -60,11 +60,16 @@ The following visualization is showing the stations in a radius around the cente
 	 - green: there is data with low values       
 	 - yellow: there are values with middle values      
 	 - red: there are values, which are really high         
-After using the threshold of 50 µg/m3, the red color is equivalent to every value, which exceeds the EU air quality limit.
 
-Chart DU\_0200 01 - Sofia PM10 Pollution Heat Map Throughout Time
+After using the threshold of 50 µg/m3, the red color is equivalent to every value, which exceeds the EU air quality limit. See in Chart DU\_200 01 below.
 
-![2. Data Understanding/DU_400-pm10-heat-map-over-time.gif][Du_0201_01]
+Chart DU\_0200 01 - PM10 Pollution Above Treshold of 50 µg/m3.
+
+![2. Data Understanding/DU_410-pm10-heat-map-above-threshold.gif][Du_0201_01]
+
+Chart DU\_0200 02 - Sofia PM10 Pollution Heat Map Throughout Time
+
+![2. Data Understanding/DU_400-pm10-heat-map-over-time.gif][Du_0201_02]
 
 
 ### METEOROLOGICAL DATA from SOFIA AIRPORT (LBSF) - METEO-data
@@ -145,5 +150,6 @@ Our solution for the problem of the lack of the traffic data will be to start  g
 [3] Dan Wei, Predicting air pollution level in a specific city, http://cs229.stanford.edu/proj2014/Dan%20Wei,%20Predicting%20air%20pollution%20level%20in%20a%20specific%20city.pdf     
 [4] Predicting Air Pollution in Madrid, https://blog.bigml.com/2018/03/13/predicting-air-pollution-in-madrid/      
 
-[Du_0201_01]: https://raw.githubusercontent.com/Bugzey/Team-Midas/master/2.%20Data%20Understanding/DU_400-pm10-heat-map-over-time.gif
+[Du_0201_01]: https://raw.githubusercontent.com/Bugzey/Team-Midas/master/2.%20Data%20Understanding/DU_410-pm10-heat-map-above-threshold.gif
+[Du_0201_02]: https://raw.githubusercontent.com/Bugzey/Team-Midas/master/2.%20Data%20Understanding/DU_400-pm10-heat-map-over-time.gif
 
