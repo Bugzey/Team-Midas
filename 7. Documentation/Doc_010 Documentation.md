@@ -37,10 +37,10 @@ The main objectives are to predict the air pollution in Sofia for the next 24 ho
 Visualization on PM10 on the map of Sofia
 
 The following visualization is showing the stations in a radius around the center of Sofia. This visualization is for PM10 and the colors are the following:
-	-no color: there are any measured values
-	-green: there is data with low values
-	-yellow: there are values with middle values
-	-red: there are values, which are really high 
+	- no color: there are any measured values
+	- green: there is data with low values
+	- yellow: there are values with middle values
+	- red: there are values, which are really high 
 After using the threshold of 50 µg/m3, the red color is equivalent to every value, which exceeds the EU air quality limit.
 
 
