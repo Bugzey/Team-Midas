@@ -5,7 +5,7 @@ Working on the case for Telelink - A study to predict air pollution for the next
 
 More info [here](https://www.datasciencesociety.net/the-telelink-case-one-step-closer-to-a-better-air-quality-and-city/)
 
-Our article page on the site of Data Science Society: [Link](https://github.com/Bugzey/Team-Midas)
+Our article page on the site of Data Science Society: [Link](https://www.datasciencesociety.net/telelink-case-solution/)
 
 **We reached 2-nd place in the competition finals! Great job, everybody!**
 
